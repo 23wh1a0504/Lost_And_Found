@@ -43,22 +43,6 @@ The **Lost and Found Portal** helps hostel students easily report lost items and
 
 ---
 
-## 🛠️ Technology Stack
-
-### Frontend
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
-
-### Backend
-- PHP
-
-### Database
-- MySQL
-
----
-
 ## 🗂️ Database Structure
 
 ### Users Table
@@ -90,10 +74,3 @@ The **Lost and Found Portal** helps hostel students easily report lost items and
 4. Approved items are visible to all users
 5. Item is marked as returned once claimed
 
----
-
-## 🚀 How to Run the Project
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/your-username/lost-and-found-portal.git
