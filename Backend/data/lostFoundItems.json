@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "item_name": "Record Book",
+    "category": "Books",
+    "description": "Record book with Vishnu logo on it.",
+    "location": "Hostel Study Room",
+    "type": "found",
+    "status": "pending"
+  },
+  {
+    "id": 2,
+    "item_name": "Water Bottle",
+    "category": "Accessories",
+    "description": "Black water bottle found near hostel study room.",
+    "location": "Hostel Corridor",
+    "type": "found",
+    "status": "approved"
+  },
+  {
+    "id": 3,
+    "item_name": "Key Chain",
+    "category": "Keys",
+    "description": "Silver key chain reported lost near hostel entrance.",
+    "location": "Hostel Entrance",
+    "type": "lost",
+    "status": "pending"
+  }
+]
