@@ -206,3 +206,7 @@ npm run client
 - Uploaded images are stored in the local `uploads/` folder
 - Public browsing shows visible items, while admins can access all moderation states
 - Returned items are available in a separate history view
+
+
+Screen Recording of the project:
+https://drive.google.com/file/d/1LTJGcaRIfdoX5_rZnRUyOODjqH14Ws11/view?usp=sharing
