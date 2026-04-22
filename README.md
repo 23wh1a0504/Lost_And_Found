@@ -146,17 +146,6 @@ ADMIN_EMAIL=admin@hostel.com
 ADMIN_PASSWORD=Admin123!
 ```
 
----
-
-## Available Scripts
-
-- `npm start` - start the backend server
-- `npm run dev` - start the backend with nodemon
-- `npm run client` - run the frontend dev server
-- `npm run client:build` - build the frontend
-- `npm run create:admin` - create or update the admin account
-- `npm run seed:items` - seed sample users and items
-- `npm run check` - run backend syntax checks and build the frontend
 
 ---
 
