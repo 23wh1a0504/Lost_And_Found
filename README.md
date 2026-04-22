@@ -1,100 +1,219 @@
-# Lost_And_Found
-# 🧳 Lost and Found Portal for College Hostel
+# Lost And Found
 
-A web-based Lost and Found Portal designed for college hostels where students can report lost or found items, and administrators can manage and verify the postings.
-
----
-
-## 📌 Project Overview
-
-The **Lost and Found Portal** helps hostel students easily report lost items and post found items with images and descriptions. The system ensures transparency and quick recovery of belongings through a centralized online platform.
+A full-stack lost and found portal for college hostels. Students can register, post lost or found items with images, browse approved listings, and contact the poster. Admins can review submissions, approve or reject posts, and mark items as returned.
 
 ---
 
-## 👥 User Roles
+## Project Overview
 
-### 1. User (Student)
+This project is built as a modern hostel lost-and-found workflow:
+
+- Users create an account and sign in
+- Users submit lost or found item reports
+- Admins review posts before they appear publicly
+- Approved items are visible in the browse page
+- Returned items move into returned history
+
+---
+
+## User Roles
+
+### User
 - Register and log in
-- Upload lost item details with image
-- Upload found item details with image
-- View all lost and found items
-- Search and filter items
-- Contact the person who posted the item
+- Create lost and found posts
+- Upload an image for an item
+- Edit or delete their own posts
+- View approved and returned items
+- Contact the poster by email
 
-### 2. Administrator
-- Secure admin login
-- View and manage all item posts
-- Approve or reject user submissions
-- Delete inappropriate or duplicate posts
-- Mark items as returned
-- Manage user accounts
-
----
-
-## ✨ Features
-
-- User authentication (Login & Registration)
-- Upload item images
-- Lost and Found item categorization
-- Admin approval system
-- Item status tracking (Lost / Found / Returned)
-- Search and filter functionality
-- Responsive UI
+### Admin
+- Log in with an admin account
+- View all submitted posts
+- Approve, reject, or return items
+- Delete any item
+- View the user list
 
 ---
 
-## 🛠️ Technology Stack
+## Features
+
+- Authentication with JWT
+- User registration and login
+- Lost and found item reporting
+- Image upload support with Multer
+- Admin moderation workflow
+- Item status tracking: pending, approved, rejected, returned
+- Public browse page with search and filters
+- Returned items history page
+- Responsive React frontend
+
+---
+
+## Technology Stack
 
 ### Frontend
-- HTML
-- CSS
+- React
+- Vite
 - JavaScript
-- Bootstrap
+- CSS
+- React Router DOM
 
 ### Backend
-- PHP
+- Node.js
+- Express.js
+- JWT Authentication
+- Multer
 
 ### Database
-- MySQL
+- MongoDB
+- Mongoose
+
+### Other Tools
+- bcryptjs
+- dotenv
+- cors
+- nodemon
 
 ---
 
-## 🗂️ Database Structure
+## Project Structure
 
-### Users Table
-- user_id
-- name
-- email
-- password
-- role (user/admin)
+- `Backend/` - Express server, routes, controllers, models, middleware, and scripts
+- `Frontend/` - React + Vite client
+- `uploads/` - uploaded item images
 
-### Items Table
-- item_id
-- user_id
-- item_name
-- category
-- description
-- location
-- date
-- image
-- type (lost/found)
-- status (pending/approved/returned)
+This project is not built with PHP, MySQL, or Bootstrap. The current implementation uses React on the frontend and Node.js, Express, and MongoDB on the backend.
 
 ---
 
-## 🔄 Application Workflow
+## API Overview
 
-1. User registers and logs in
-2. User submits lost or found item details
-3. Admin reviews and approves the post
-4. Approved items are visible to all users
-5. Item is marked as returned once claimed
+### Auth
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
+
+### Items
+- `POST /api/items`
+- `GET /api/items`
+- `GET /api/items/count`
+- `GET /api/items/:id`
+- `PUT /api/items/:id`
+- `PATCH /api/items/:id/status`
+- `DELETE /api/items/:id`
+
+### Users
+- `GET /api/users` - admin only
 
 ---
 
-## 🚀 How to Run the Project
+## Data Model
 
-1. Clone the repository
-   ```bash
-   git clone https://github.com/your-username/lost-and-found-portal.git
+### User
+- `name`
+- `email`
+- `password`
+- `role`
+
+### Item
+- `user_id`
+- `item_name`
+- `category`
+- `description`
+- `location`
+- `date`
+- `image`
+- `type`
+- `status`
+
+---
+
+## Environment Variables
+
+Create a `.env` file in the project root and set:
+
+```env
+MONGO_URI=mongodb://127.0.0.1:27017/lost_and_found
+JWT_SECRET=your_secret_here
+PORT=5000
 ```
+
+Optional admin seed values used by `create:admin`:
+
+```env
+ADMIN_NAME=Hostel Admin
+ADMIN_EMAIL=admin@hostel.com
+ADMIN_PASSWORD=Admin123!
+```
+
+---
+
+## Available Scripts
+
+- `npm start` - start the backend server
+- `npm run dev` - start the backend with nodemon
+- `npm run client` - run the frontend dev server
+- `npm run client:build` - build the frontend
+- `npm run create:admin` - create or update the admin account
+- `npm run seed:items` - seed sample users and items
+- `npm run check` - run backend syntax checks and build the frontend
+
+---
+
+## How To Run
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/23wh1a0504/Lost_And_Found.git
+cd Lost_And_Found
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create `.env` in the project root and add your values.
+
+4. Start MongoDB locally.
+
+5. Create the admin account:
+
+```bash
+npm run create:admin
+```
+
+6. Optionally seed sample data:
+
+```bash
+npm run seed:items
+```
+
+7. Start the backend:
+
+```bash
+npm start
+```
+
+8. In another terminal, start the frontend:
+
+```bash
+npm run client
+```
+
+---
+
+## Default Local URLs
+
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:5000`
+
+---
+
+## Notes
+
+- Uploaded images are stored in the local `uploads/` folder
+- Public browsing shows visible items, while admins can access all moderation states
+- Returned items are available in a separate history view
