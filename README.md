@@ -66,7 +66,6 @@ This project is built as a modern hostel lost-and-found workflow:
 
 ### Database
 - MongoDB
-- Mongoose
 
 ### Other Tools
 - bcryptjs
