@@ -15,7 +15,6 @@ const apiRequest = async (url, options = {}, token = "") => {
       ...(options.headers || {})
     }
   });
-
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
