@@ -3,7 +3,6 @@ const path = require("path");
 const mongoose = require("mongoose");
 require("../models/User");
 const Item = require("../models/Item");
-
 const editableFields = ["item_name", "category", "description", "location", "date", "type"];
 const allowedStatuses = ["approved", "rejected", "returned", "pending"];
 
